@@ -23,4 +23,8 @@ class DeckTest < Minitest::Test
     assert_equal [@card_1, @card_2, @card_3], @deck.cards
   end
 
+  def test_it_can_count_cards
+    assert_equal 3, @deck.count
+  end
+
 end
