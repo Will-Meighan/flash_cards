@@ -8,6 +8,7 @@ class TurnTest < Minitest::Test
   def setup
     @card = Card.new("What is the capital of Alaska?", "Juneau", :Geography)
     @turn = Turn.new("Juneau", @card)
+    @turn2 = Turn.new("Nome", @card)
   end
 
   def test_it_exists
@@ -21,6 +22,7 @@ class TurnTest < Minitest::Test
 
   def test_if_guess_correct
     assert @turn.correct?
+    refute @turn2.correct?
   end
 
   def test_feedback
