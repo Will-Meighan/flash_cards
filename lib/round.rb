@@ -23,15 +23,24 @@ class Round
     end.length
   end
 
-  def number_correct_by_category(category)
+  def number_correct_by_category(cat)
     correct_cards = @turns.find_all do |turn|
       turn.correct?
     end
 
     correct_cards.find_all do |turn|
-      turn.card.category == category
+      turn.card.category == cat
     end.length
   end
+
+  def percent_correct
+    correct_cards = @turns.find_all do |turn|
+      turn.correct?
+    end
+    
+    correct_cards.length / @turns.length.to_f * 100
+  end
+
 
 
 end
