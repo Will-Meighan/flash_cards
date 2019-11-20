@@ -7,11 +7,11 @@ class Deck
   end
 
   def count
-    @cards.length
+    cards.length
   end
 
   def cards_in_category(cat)
-    @cards.find_all do |card|
+    cards.find_all do |card|
       card.category == cat
     end
   end
