@@ -10,9 +10,9 @@ class Deck
     cards.length
   end
 
-  def cards_in_category(cat)
+  def cards_in_category(category)
     cards.find_all do |card|
-      card.category == cat
+      card.category == category
     end
   end
 
