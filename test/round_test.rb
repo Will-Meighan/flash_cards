@@ -56,18 +56,18 @@ class RoundTest < Minitest::Test
 
   def test_it_can_calculate_percent_correct
     @round.take_turn("Nome")
-    assert_equal 0.0, @round.percent_correct
+    assert_equal 0.00, @round.percent_correct
 
     @round.take_turn("Mars")
-    assert_equal 50.0, @round.percent_correct
+    assert_equal 50.00, @round.percent_correct
   end
 
   def test_it_can_calculate_percent_correct_by_category
     @round.take_turn("Juneau")
     @round.take_turn("Venus")
 
-    assert_equal 100.0, @round.percent_correct_by_category(:Geography)
-    assert_equal 0.0, @round.percent_correct_by_category(:STEM)
+    assert_equal 100.00, @round.percent_correct_by_category(:Geography)
+    assert_equal 0.00, @round.percent_correct_by_category(:STEM)
   end
 
 end

@@ -38,11 +38,7 @@ class Round
       turn.correct?
     end
 
-    if turns.length == 0
-      0.0
-    else
-      correct_cards.length / turns.length.to_f * 100
-    end
+    (correct_cards.length / turns.length.to_f.round(2)) * 100
   end
 
   def percent_correct_by_category(category)
@@ -55,7 +51,7 @@ class Round
     if correct_turns_by_category == 0
       0.0
     else
-      (turns_by_category.length / correct_turns_by_category.to_f) * 100
+      percent_cor_by_cat = (correct_turns_by_category / turns_by_category.length.to_f.round) * 100
     end
   end
 
