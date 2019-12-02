@@ -22,19 +22,20 @@ def start
     print "> "
     answer = gets.chomp.capitalize
     @round.take_turn(answer)
+
     if @round.turns.last.correct?
       puts "#{@round.turns.last.feedback}"
     else
       puts "#{@round.turns.last.feedback} The correct answer is: #{@round.turns.last.card.answer}"
     end
   end
+end
 
-  def results
-    puts "****** Game Over! ******"
-    puts "You had #{@round.number_correct} correct guesses out of #{@round.turns.count} for a total score of #{@round.percent_correct}%."
-    puts "Geography - #{@round.percent_correct_by_category(:Geography)}% correct"
-    puts "STEM - #{@round.percent_correct_by_category(:STEM)}% correct"
-  end
+def results
+  puts "****** Game Over! ******"
+  puts "You had #{@round.number_correct} correct guesses out of #{@round.turns.count} for a total score of #{@round.percent_correct}%."
+  puts "Geography - #{@round.percent_correct_by_category(:Geography)}% correct"
+  puts "STEM - #{@round.percent_correct_by_category(:STEM)}% correct"
 end
 
 start
